@@ -46,6 +46,10 @@ export function _relatedTarget(e) {
   return e.relatedTarget;
 }
 
+export function target(e) {
+  return e.target;
+}
+
 export function buttons(e) {
   return e.buttons;
 }

@@ -16,6 +16,7 @@ module Web.UIEvent.MouseEvent
   , metaKey
   , button
   , relatedTarget
+  , target
   , buttons
   , getModifierState
   ) where
@@ -28,6 +29,7 @@ import Effect (Effect)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Event (Event)
 import Web.Event.EventTarget (EventTarget)
+import Web.HTML.HTMLElement (HTMLElement)
 import Web.Internal.FFI (unsafeReadProtoTagged)
 import Web.UIEvent.UIEvent (UIEvent)
 
@@ -71,6 +73,8 @@ foreign import _relatedTarget :: MouseEvent -> Nullable EventTarget
 
 relatedTarget :: MouseEvent -> Maybe EventTarget
 relatedTarget = toMaybe <$> _relatedTarget
+
+foreign import target :: MouseEvent -> HTMLElement
 
 foreign import buttons :: MouseEvent -> Int
 

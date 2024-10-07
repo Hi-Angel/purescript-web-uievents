@@ -8,6 +8,8 @@ Breaking changes:
 
 New features:
 
+- Implement retrieving the target element of a mouse event (#24)
+
 Bugfixes:
 
 Other improvements:
